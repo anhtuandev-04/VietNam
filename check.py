@@ -4,14 +4,14 @@ import time
 import logging
 from aiohttp import TCPConnector
 
-# 并发限制
+
 CONCURRENT_REQUESTS = 50
-# 连接池大小
+
 CONNECTION_LIMIT = 100
-# 每批次处理的 URL 数量
+
 BATCH_SIZE = 1000
 
-# 设置日志配置
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
     logging.FileHandler("log.log"),
     logging.StreamHandler()
@@ -80,10 +80,10 @@ def main():
     input_file = 'domains.txt'
     output_file = 'output.txt'
 
-    # 清空输出文件
+    
     open(output_file, 'w').close()
 
-    # 创建事件循环并运行处理
+    
     loop = asyncio.get_event_loop()
     loop.run_until_complete(process_file_in_batches(input_file, output_file))
 
