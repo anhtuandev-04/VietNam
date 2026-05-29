@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 async def fetch_url(session, url, output_file):
     start_time = time.time()
     try:
-        async with session.get(url, timeout=5, allow_redirects=False) as response: 
+        async with session.get(url, timeout=5, allow_redirects=False) as response:
             end_time = time.time()
             duration = end_time - start_time
             if response.status == 200:
