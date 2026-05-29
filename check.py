@@ -8,7 +8,7 @@ CONCURRENT_REQUESTS = 50
 
 CONNECTION_LIMIT = 100
 
-BATCH_SIZE = 1000
+BATCH_SIZE = 1000 
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
     logging.FileHandler("log.log"),
