@@ -57,13 +57,13 @@ async def process_urls(urls, output_file):
         try:
             await asyncio.gather(*tasks)
         except asyncio.CancelledError:
-            logging.error("Tasks were cancelled due to asyncio.CancelledError")
+            logging.error("Tasks were cancelled due to asyncio.CancelledError") 
             for task in tasks:
                 if not task.done():
                     task.cancel()
             await asyncio.gather(*tasks, return_exceptions=True)
 
-async def process_file_in_batches(input_file, output_file): 
+async def process_file_in_batches(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as file:
         batch = []
         for line in file:
