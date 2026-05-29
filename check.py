@@ -57,7 +57,7 @@ async def process_urls(urls, output_file):
         try:
             await asyncio.gather(*tasks)
         except asyncio.CancelledError:
-            logging.error("Tasks were cancelled due to asyncio.CancelledError") 
+            logging.error("Tasks were cancelled due to asyncio.CancelledError")
             for task in tasks:
                 if not task.done():
                     task.cancel()
@@ -83,7 +83,7 @@ def main():
 
     
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(process_file_in_batches(input_file, output_file))
+    loop.run_until_complete(process_file_in_batches(input_file, output_file)) 
 
 if __name__ == '__main__':
     start_time = time.time()
