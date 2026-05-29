@@ -4,6 +4,7 @@ import time
 import logging
 from aiohttp import TCPConnector
 
+
 CONCURRENT_REQUESTS = 50
 
 CONNECTION_LIMIT = 100
