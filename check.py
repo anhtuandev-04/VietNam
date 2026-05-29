@@ -52,7 +52,7 @@ async def process_urls(urls, output_file):
         for url in urls:
             cleaned_url = clean_url(url.strip())
             if cleaned_url:
-                task = bound_fetch(sem, session, cleaned_url, output_file)
+                task = bound_fetch(sem, session, cleaned_url, output_file) 
                 tasks.append(task)
         try:
             await asyncio.gather(*tasks)
