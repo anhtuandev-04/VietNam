@@ -2,7 +2,7 @@ import asyncio
 import aiohttp
 import time
 import logging
-from aiohttp import TCPConnector 
+from aiohttp import TCPConnector
 
 CONCURRENT_REQUESTS = 50
 
@@ -63,7 +63,7 @@ async def process_urls(urls, output_file):
                     task.cancel()
             await asyncio.gather(*tasks, return_exceptions=True)
 
-async def process_file_in_batches(input_file, output_file):
+async def process_file_in_batches(input_file, output_file): 
     with open(input_file, 'r', encoding='utf-8') as file:
         batch = []
         for line in file:
